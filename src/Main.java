@@ -8,21 +8,18 @@ public class Main {
         List<Show> shows = lerShowsDoCSV("src/netflix_data.csv");
         PrintWriter log = new PrintWriter("log.txt");
 
-        // Inserção AVL
         long inicio = System.nanoTime();
         for (Show show : shows) avl.inserir(show);
         long fim = System.nanoTime();
         long tempoInsercaoAVL = (fim - inicio) / 1_000_000;
         log.println("Tempo de inserção AVL: " + tempoInsercaoAVL + " ms");
 
-        // Inserção TreeMap
         inicio = System.nanoTime();
         for (Show show : shows) map.put(show.getShowId(), show);
         fim = System.nanoTime();
         long tempoInsercaoTreeMap = (fim - inicio) / 1_000_000;
         log.println("Tempo de inserção TreeMap: " + tempoInsercaoTreeMap + " ms");
 
-        // Busca aleatória AVL
         Random rand = new Random();
         int n = shows.size();
         int numBuscas = 1000;
@@ -35,7 +32,6 @@ public class Main {
         long tempoBuscaAVL = (fim - inicio) / 1_000_000;
         log.println("Tempo de " + numBuscas + " buscas AVL: " + tempoBuscaAVL + " ms");
 
-        // Busca aleatória TreeMap
         inicio = System.nanoTime();
         for (int i = 0; i < numBuscas; i++) {
             String id = shows.get(rand.nextInt(n)).getShowId();
@@ -45,7 +41,6 @@ public class Main {
         long tempoBuscaTreeMap = (fim - inicio) / 1_000_000;
         log.println("Tempo de " + numBuscas + " buscas TreeMap: " + tempoBuscaTreeMap + " ms");
 
-        // Remoção aleatória AVL
         List<String> idsParaRemover = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
             idsParaRemover.add(shows.get(rand.nextInt(n)).getShowId());
@@ -58,7 +53,6 @@ public class Main {
         long tempoRemocaoAVL = (fim - inicio) / 1_000_000;
         log.println("Tempo de 1000 remoções AVL: " + tempoRemocaoAVL + " ms");
 
-        // Remoção aleatória TreeMap
         inicio = System.nanoTime();
         for (String id : idsParaRemover) {
             map.remove(id);
@@ -71,7 +65,6 @@ public class Main {
         System.out.println("Resultados gravados em log.txt");
     }
 
-    // Método para ler o CSV (igual ao anterior)
     public static List<Show> lerShowsDoCSV(String caminho) throws IOException {
         List<Show> shows = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(caminho));
@@ -106,7 +99,6 @@ public class Main {
         return shows;
     }
 
-    // Método para fazer o parse de uma linha CSV considerando aspas
     public static String[] parseCSVLine(String line) {
         List<String> campos = new ArrayList<>();
         StringBuilder campo = new StringBuilder();

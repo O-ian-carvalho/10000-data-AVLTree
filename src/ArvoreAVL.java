@@ -1,7 +1,6 @@
 public class ArvoreAVL {
     private NoAVL raiz;
 
-    // Métodos públicos
     public void inserir(Show dado) {
         raiz = inserir(raiz, dado);
     }
@@ -23,7 +22,6 @@ public class ArvoreAVL {
         return false;
     }
 
-    // Métodos privados recursivos
     private NoAVL inserir(NoAVL no, Show dado) {
         if (no == null) return new NoAVL(dado);
 
@@ -46,7 +44,6 @@ public class ArvoreAVL {
         return buscar(no.direito, showId);
     }
 
-    // Método auxiliar para buscar o nó (usado no alterar)
     private NoAVL buscarNo(NoAVL no, String showId) {
         if (no == null) return null;
         int cmp = showId.compareTo(no.dado.getShowId());
@@ -55,7 +52,6 @@ public class ArvoreAVL {
         return buscarNo(no.direito, showId);
     }
 
-    // Método de remoção
     private NoAVL remover(NoAVL no, String showId) {
         if (no == null) return null;
 
@@ -78,12 +74,10 @@ public class ArvoreAVL {
             }
         }
 
-        // Atualizar altura e rebalancear
         no.altura = 1 + Math.max(altura(no.esquerdo), altura(no.direito));
         return balancear(no);
     }
 
-    // Método auxiliar para encontrar o nó com valor mínimo
     private NoAVL encontrarMinimo(NoAVL no) {
         while (no.esquerdo != null) {
             no = no.esquerdo;
@@ -91,11 +85,9 @@ public class ArvoreAVL {
         return no;
     }
 
-    // Métodos de balanceamento
     private NoAVL balancear(NoAVL no) {
         int fb = fatorBalanceamento(no);
 
-        // Rotação à direita (caso Left-Left ou Left-Right)
         if (fb > 1) {
             if (fatorBalanceamento(no.esquerdo) < 0) {
                 no.esquerdo = rotacaoEsquerda(no.esquerdo); // Left-Right
@@ -103,7 +95,6 @@ public class ArvoreAVL {
             return rotacaoDireita(no); // Left-Left
         }
 
-        // Rotação à esquerda (caso Right-Right ou Right-Left)
         if (fb < -1) {
             if (fatorBalanceamento(no.direito) > 0) {
                 no.direito = rotacaoDireita(no.direito); // Right-Left
@@ -111,7 +102,7 @@ public class ArvoreAVL {
             return rotacaoEsquerda(no); // Right-Right
         }
 
-        return no; // Nó já está balanceado
+        return no;
     }
 
     private int altura(NoAVL no) {
@@ -126,11 +117,9 @@ public class ArvoreAVL {
         NoAVL x = y.esquerdo;
         NoAVL T2 = x.direito;
 
-        // Realizar rotação
         x.direito = y;
         y.esquerdo = T2;
 
-        // Atualizar alturas
         y.altura = 1 + Math.max(altura(y.esquerdo), altura(y.direito));
         x.altura = 1 + Math.max(altura(x.esquerdo), altura(x.direito));
 
@@ -141,18 +130,15 @@ public class ArvoreAVL {
         NoAVL y = x.direito;
         NoAVL T2 = y.esquerdo;
 
-        // Realizar rotação
         y.esquerdo = x;
         x.direito = T2;
 
-        // Atualizar alturas
         x.altura = 1 + Math.max(altura(x.esquerdo), altura(x.direito));
         y.altura = 1 + Math.max(altura(y.esquerdo), altura(y.direito));
 
         return y; // Nova raiz
     }
 
-    // Método auxiliar para contar nós (útil para testes)
     public int tamanho() {
         return tamanho(raiz);
     }
@@ -162,7 +148,6 @@ public class ArvoreAVL {
         return 1 + tamanho(no.esquerdo) + tamanho(no.direito);
     }
 
-    // Método para verificar se a árvore está vazia
     public boolean isEmpty() {
         return raiz == null;
     }

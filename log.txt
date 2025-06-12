@@ -1,6 +1,6 @@
-Tempo de inserção AVL: 8 ms
+Tempo de inserção AVL: 9 ms
 Tempo de inserção TreeMap: 7 ms
 Tempo de 1000 buscas AVL: 1 ms
-Tempo de 1000 buscas TreeMap: 0 ms
-Tempo de 1000 remoções AVL: 1 ms
+Tempo de 1000 buscas TreeMap: 1 ms
+Tempo de 1000 remoções AVL: 2 ms
 Tempo de 1000 remoções TreeMap: 1 ms
