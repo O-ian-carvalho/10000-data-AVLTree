@@ -33,7 +33,7 @@ Siga os passos abaixo para executar o projeto:
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [URL do seu repositório]
+    git clone https://github.com/O-ian-carvalho/10000-data-AVLTree
     cd ArvoreAvlTrabalho
     ```
 
