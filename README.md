@@ -1,5 +1,4 @@
-# ArvoreAvlTrabalho
-
+# Arvore Avl
 Este projeto implementa uma Árvore AVL em Java para análise de desempenho, conforme solicitado na disciplina de Programação Orientada a Objetos.
 
 ## Descrição
