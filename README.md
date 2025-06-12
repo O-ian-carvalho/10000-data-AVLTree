@@ -41,32 +41,17 @@ Siga os passos abaixo para executar o projeto:
 
     -   Clique em "File" -> "Open" e selecione a pasta do projeto.
 
-3.  **Verifique a estrutura do projeto:**
-
-    -   Certifique-se de que a estrutura do projeto está correta, com as classes Java na pasta `src`.
-
-4.  **Adicione o arquivo CSV:**
-
-    -   Coloque o arquivo `netflix_data.csv` na pasta `src` do projeto.
-
-5.  **Compile e execute o projeto:**
+3.  **Compile e execute o projeto:**
 
     -   No IntelliJ IDEA, clique com o botão direito no arquivo `Main.java` e selecione "Run 'Main.main()'".
 
-6.  **Analise os resultados:**
+4.  **Analise os resultados:**
 
     -   Após a execução, um arquivo chamado `log.txt` será gerado na pasta raiz do projeto. Este arquivo contém os tempos de inserção, busca e remoção para a Árvore AVL e o TreeMap.
 
-## Configuração Adicional (Opcional)
-
--   **Aumentar o número de testes:**
-    -   No arquivo `Main.java`, você pode alterar o número de buscas e remoções para obter resultados mais precisos. Altere as variáveis `numBuscas` e o número de iterações nos laços de remoção.
 
 ## Observações
 
 -   Este projeto utiliza um parser CSV simples implementado manualmente para lidar com campos entre aspas.
 -   Os tempos de execução podem variar dependendo do hardware e da quantidade de dados no arquivo CSV.
 
-## Licença
-
-[Tipo de Licença]
