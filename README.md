@@ -4,7 +4,7 @@ Este projeto implementa uma Árvore AVL em Java para análise de desempenho, con
 
 ## Descrição
 
-O objetivo deste trabalho é implementar uma Árvore AVL para armazenar e manipular dados, analisando o tempo gasto nas operações de inserção, remoção e busca. O projeto também compara o desempenho da Árvore AVL com o `java.util.TreeMap` (árvore rubro-negra) do Java Collections Framework.
+O objetivo deste trabalho é implementar uma Árvore AVL para armazenar e manipular dados, analisando o tempo gasto nas operações de inserção, remoção e busca. O projeto também compara o desempenho da Árvore AVL com o `java.util.TreeMap` do Java Collections Framework.
 
 ## Autores
 
